@@ -62,10 +62,15 @@ export default function RequestPart() {
   style={{ height: 35, width: 320, backgroundColor: "#009289", borderRadius: 5 }}>
         <Text style={{fontWeight:"500",fontSize:12,color:"white",textAlign:"center",padding:10}}>Send Request</Text>
       </TouchableHighlight>
-      <View>
-      <Icon name="line" size={32} color="red" style={{ marginRight: 10 }} />
+      <View style={{width:"100%",height:"5%",display:"flex", flexDirection:"row", justifyContent:"space-evenly",alignItems:"center"}}>
+      <Image source={require('../assets/Line.png')}/>
       <Text>OR</Text>
+      <Image source={require('../assets/Line.png')}/>
       </View>
+      <TouchableHighlight
+  style={{ height: 35, width: 320, backgroundColor: "#2B4360", borderRadius: 5 }}>
+        <Text style={{fontWeight:"500",fontSize:12,color:"white",textAlign:"center",padding:10}}>Cancel</Text>
+      </TouchableHighlight>
         </View>
       </View>
     </View>

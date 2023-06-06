@@ -8,13 +8,13 @@ interface IconProps {
   style?: StyleProp<ViewStyle>;
 }
 
-const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'black'}) => {
+const Icon: React.FC<IconProps> = ({ name, }) => {
   const iconSource: ImageSourcePropType = getIconSource(name);
 
   return (
     <Image
       source={iconSource}
-      style={[{ width: size, height: size, tintColor: color }]}
+    //   style={[{ width: size, height: size, tintColor: color }]}
     />
   );
 };
@@ -23,12 +23,12 @@ const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'black'}) => {
 const getIconSource = (name: string): ImageSourcePropType => {
   switch (name) {
     case 'line':
-      return require('../assets/Line 64.png');
+      return require('../assets/Line.png');
     case 'settings':
-      return require('../assets/Line 64.png');
+      return require('../assets/Line.png');
     // Add more cases for other icons
     default:
-      return require('../assets/Line 64.png');
+      return require('../assets/Line.png');
   }
 };
 
