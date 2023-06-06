@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import Icon from './icons';
+import Button from './Button';
+import Logo from './logo'
 // import FileInput from 'react-native-file-input';
-import { StyleSheet, Text, View,TextInput,Image,Button,TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View,TextInput,Image,TouchableHighlight} from 'react-native';
 
 export default function RequestPart() {
     // const [text, setText] = useState('');
@@ -12,7 +13,7 @@ export default function RequestPart() {
     // };
   return (
     <View style={styles.container}>
-        <Image style={styles.logo} source={require('../assets/favicon.png')}/>
+      <Logo></Logo>
       <StatusBar style="auto" />
       <View style={styles.main}>
         <View style={styles.description}> 
@@ -46,7 +47,7 @@ export default function RequestPart() {
       /> 
          <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder="Organisation"
         // value={text}
         // onChangeText={handleChangeText}
       /> 
@@ -55,7 +56,7 @@ export default function RequestPart() {
         style={styles.textArea}
         multiline
         numberOfLines={10} // Set the number of lines you want to display initially
-        placeholder="Enter Message (Why should you be given the partnership?)2"
+        placeholder="Message (Why should you be given the partnership?)"
 
       />  
    <TouchableHighlight
@@ -67,10 +68,7 @@ export default function RequestPart() {
       <Text>OR</Text>
       <Image source={require('../assets/Line.png')}/>
       </View>
-      <TouchableHighlight
-  style={{ height: 35, width: 320, backgroundColor: "#2B4360", borderRadius: 5 }}>
-        <Text style={{fontWeight:"500",fontSize:12,color:"white",textAlign:"center",padding:10}}>Cancel</Text>
-      </TouchableHighlight>
+    <Button title="Cancel"></Button>
         </View>
       </View>
     </View>
