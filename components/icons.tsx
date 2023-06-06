@@ -25,10 +25,10 @@ const getIconSource = (name: string): ImageSourcePropType => {
     case 'line':
       return require('../assets/Line 64.png');
     case 'settings':
-      return require('./path/to/settings-icon.png');
+      return require('../assets/Line 64.png');
     // Add more cases for other icons
     default:
-      return require('./path/to/default-icon.png');
+      return require('../assets/Line 64.png');
   }
 };
 
