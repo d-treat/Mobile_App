@@ -2,11 +2,11 @@ import { StatusBar } from "expo-status-bar";
 import React, {useState} from "react";
 import Button from '../components/Button';
 import Logo from '../components/logo';
-import { Text, View,TextInput,Image,TouchableHighlight} from 'react-native';
+import { Text, View,TextInput,Image,TouchableHighlight, TouchableOpacity} from 'react-native';
 import {styles} from '../styles/styles';
 import axios from "axios";
 
-export default function SignupPage(){
+export default function SignupPage({navigation}: any){
     const [names, setNames] = useState('');
     const [number, setNumbers] = useState('');
     const [email, setEmail] = useState('');
@@ -41,6 +41,7 @@ export default function SignupPage(){
     };
     const handleSubmit = () => {
         console.log("submitting the form");
+        console.log(names);
         setNames('');
         setNumbers('');
         setEmail('');
@@ -50,6 +51,9 @@ export default function SignupPage(){
         setGender('');
         setOrganization('');
     }
+    const handleNavigation = () => { 
+        navigation.navigate('login'); 
+      };
     return(
         <View style={styles.container}>
             <Logo></Logo>
@@ -112,6 +116,12 @@ export default function SignupPage(){
                         <Image source={require('../assets/Line.png')}/>
                     </View>
                 <Button title="Login with Google"></Button> 
+                <Text>
+                Already have an account?{' '}
+                <TouchableOpacity onPress={handleNavigation}>
+                <Text style={{ textDecorationLine: 'underline' }}>Sign in</Text>
+                </TouchableOpacity>
+                </Text>
                 </View>
             </View>
         </View>
