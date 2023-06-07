@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet,View, Text, SafeAreaView,TextInput,Image } from 'react-native';
-import RequestPart from './components/requestPart';
-
+import LoginPage from './pages/Login';
+// import RequestPart from './components/requestPart';
 export default function App() {
   return (
     <View style={styles.container}>
-      <RequestPart></RequestPart>
+      <LoginPage></LoginPage>
+      {/* <RequestPart></RequestPart> */}
       <StatusBar  backgroundColor="#2B4360" />
     </View>
   );
