@@ -2,11 +2,11 @@ import { StatusBar } from "expo-status-bar";
 import React, {useState} from "react";
 import Button from '../components/Button';
 import Logo from '../components/logo';
-import { Text, View,TextInput,Image,TouchableHighlight} from 'react-native';
+import { Text, View,TextInput,Image,TouchableHighlight, TouchableOpacity} from 'react-native';
 import {styles} from '../styles/styles';
 import axios from "axios";
 
-export default function SignupPage(){
+export default function SignupPage({navigation}: any){
     const [names, setNames] = useState('');
     const [number, setNumbers] = useState('');
     const [email, setEmail] = useState('');
@@ -41,6 +41,7 @@ export default function SignupPage(){
     };
     const handleSubmit = () => {
         console.log("submitting the form");
+        console.log(names);
         setNames('');
         setNumbers('');
         setEmail('');
@@ -50,6 +51,9 @@ export default function SignupPage(){
         setGender('');
         setOrganization('');
     }
+    const handleNavigation = () => { 
+        navigation.navigate('login'); 
+      };
     return(
         <View style={styles.container}>
             <Logo></Logo>
@@ -101,7 +105,7 @@ export default function SignupPage(){
                 value={country} onChangeText={handleCountryChange}
                 />
                 <TouchableHighlight onPress={handleSubmit}
-                style={{ height: 35, width: 320, backgroundColor: "#009289", borderRadius: 5 }}                >
+                style={{ height: 35, width: "100%", backgroundColor: "#009289", borderRadius: 5 }}                >
                 <Text style={{ fontWeight: "500", fontSize: 12, color: "white", textAlign: "center", padding: 10 }}>
                     Sign Up
                 </Text>
@@ -112,6 +116,12 @@ export default function SignupPage(){
                         <Image source={require('../assets/Line.png')}/>
                     </View>
                 <Button title="Login with Google"></Button> 
+                <Text>
+                Already have an account?{' '}
+                <TouchableOpacity onPress={handleNavigation}>
+                <Text style={styles.textLink}>Sign in</Text>
+                </TouchableOpacity>
+                </Text>
                 </View>
             </View>
         </View>

@@ -2,13 +2,22 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet,View, Text, SafeAreaView,TextInput,Image } from 'react-native';
 import LoginPage from './pages/Login';
 import SignupPage from './pages/SignUp';
-// import RequestPart from './components/requestPart';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import RequestPart from './components/requestPart';
+const Stack = createStackNavigator();
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <LoginPage></LoginPage> */}
-      <SignupPage></SignupPage>
-      {/* <RequestPart></RequestPart> */}
+      <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen name="request" component={RequestPart} options={{ headerShown: false }} />
+      <Stack.Screen name="signup" component={SignupPage} options={{ headerShown: false }}/>
+        <Stack.Screen name="login" component={LoginPage} options={{ headerShown: false }} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
       <StatusBar  backgroundColor="#2B4360" />
     </View>
   );

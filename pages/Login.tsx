@@ -17,7 +17,7 @@ export default function LoginPage(){
         setPassword(text);
       };
       const handleSendRequest = () => {
-
+        console.log("sending data");
         const data = {
           email: email,
           password: password,
@@ -53,7 +53,7 @@ export default function LoginPage(){
                 onChangeText={handlePasswordChange}
                 />
                 <TouchableHighlight
-                style={{ height: 35, width: 320, backgroundColor: "#009289", borderRadius: 5 }}
+                style={{ height: 35, width: "100%", backgroundColor: "#009289", borderRadius: 5 }}
                 onPress={handleSendRequest}
                 >
                 <Text style={{ fontWeight: "500", fontSize: 12, color: "white", textAlign: "center", padding: 10 }}>
