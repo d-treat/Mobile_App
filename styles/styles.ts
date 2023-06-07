@@ -80,5 +80,10 @@ export const styles = StyleSheet.create({
         lineHeight:150,
         marginBottom:20
     
+      },
+      textLink:{
+        padding: 10,
+        color: "#218D82",
+        textDecorationLine: "underline",
       }
     });

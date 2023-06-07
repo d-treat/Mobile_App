@@ -105,7 +105,7 @@ export default function SignupPage({navigation}: any){
                 value={country} onChangeText={handleCountryChange}
                 />
                 <TouchableHighlight onPress={handleSubmit}
-                style={{ height: 35, width: 320, backgroundColor: "#009289", borderRadius: 5 }}                >
+                style={{ height: 35, width: "100%", backgroundColor: "#009289", borderRadius: 5 }}                >
                 <Text style={{ fontWeight: "500", fontSize: 12, color: "white", textAlign: "center", padding: 10 }}>
                     Sign Up
                 </Text>
@@ -119,7 +119,7 @@ export default function SignupPage({navigation}: any){
                 <Text>
                 Already have an account?{' '}
                 <TouchableOpacity onPress={handleNavigation}>
-                <Text style={{ textDecorationLine: 'underline' }}>Sign in</Text>
+                <Text style={styles.textLink}>Sign in</Text>
                 </TouchableOpacity>
                 </Text>
                 </View>
