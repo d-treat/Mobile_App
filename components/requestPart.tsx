@@ -5,7 +5,7 @@ import Button from './Button';
 import Logo from './logo';
 // import styles from '../styles/styles'
 // import FileInput from 'react-native-file-input';
-import { StyleSheet, Text, View,TextInput,Image,TouchableHighlight} from 'react-native';
+import {ScrollView, StyleSheet, Text, View,TextInput,Image,TouchableHighlight} from 'react-native';
 import {styles} from '../styles/styles'
 export default function RequestPart({navigation}:any) {
 
@@ -46,6 +46,7 @@ const handleNavigation = () => {
   navigation.navigate('login'); 
 };
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Logo></Logo>
       <StatusBar style="auto" />
@@ -112,5 +113,6 @@ const handleNavigation = () => {
         </View>
       </View>
     </View>
+    </ScrollView>
   );
 }

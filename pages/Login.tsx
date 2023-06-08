@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, {useState} from "react";
 import Button from '../components/Button';
 import Logo from '../components/logo';
-import { Text, View,TextInput,Image,TouchableHighlight, TouchableOpacity} from 'react-native';
+import { ScrollView, Text, View,TextInput,Image,TouchableHighlight, TouchableOpacity} from 'react-native';
 import {styles} from '../styles/styles';
 import axios from "axios";
 
@@ -37,6 +37,7 @@ export default function LoginPage({navigation}:any){
     navigation.navigate('request');
   }
     return(
+      <ScrollView>
         <View style={styles.container}>
             <Logo></Logo>
             <StatusBar style="auto" />
@@ -81,5 +82,6 @@ export default function LoginPage({navigation}:any){
                 </View>
             </View>
         </View>
+        </ScrollView>
     )
 }
