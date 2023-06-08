@@ -2,11 +2,11 @@ import { StatusBar } from "expo-status-bar";
 import React, {useState} from "react";
 import Button from '../components/Button';
 import Logo from '../components/logo';
-import { Text, View,TextInput,Image,TouchableHighlight} from 'react-native';
+import { Text, View,TextInput,Image,TouchableHighlight, TouchableOpacity} from 'react-native';
 import {styles} from '../styles/styles';
 import axios from "axios";
 
-export default function LoginPage(){
+export default function LoginPage({navigation}:any){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const handleEmailChange = (text: string) => {
@@ -29,7 +29,13 @@ export default function LoginPage(){
       .catch((error) => {
         console.error(error);
       });
+      const handleNavigation = () => { 
+        navigation.navigate('login'); 
+      };
   };
+  const handleNavigation =() =>{
+    navigation.navigate('request');
+  }
     return(
         <View style={styles.container}>
             <Logo></Logo>
@@ -65,7 +71,13 @@ export default function LoginPage(){
                         <Text>OR</Text>
                         <Image source={require('../assets/Line.png')}/>
                     </View>
-                <Button title="Login with Google"></Button> 
+                <Button title="Login with Google"></Button>
+                <Text>
+                Not our partner{' '}
+                <TouchableOpacity onPress={handleNavigation}>
+                <Text style={styles.textLink}>request partnership</Text>
+                </TouchableOpacity>
+                </Text> 
                 </View>
             </View>
         </View>

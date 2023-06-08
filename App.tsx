@@ -12,8 +12,8 @@ export default function App() {
     <View style={styles.container}>
       <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="request" component={RequestPart} options={{ headerShown: false }} />
       <Stack.Screen name="signup" component={SignupPage} options={{ headerShown: false }}/>
+      <Stack.Screen name="request" component={RequestPart} options={{ headerShown: false }} />
         <Stack.Screen name="login" component={LoginPage} options={{ headerShown: false }} />
 
       </Stack.Navigator>
