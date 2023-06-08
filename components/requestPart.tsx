@@ -46,7 +46,8 @@ const handleNavigation = () => {
   navigation.navigate('login'); 
 };
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView>
+    <View style={styles.container}>
       <Logo></Logo>
       <StatusBar style="auto" />
       <View style={styles.main}>
@@ -111,6 +112,7 @@ const handleNavigation = () => {
                 </Text>
         </View>
       </View>
+    </View>
     </ScrollView>
   );
 }

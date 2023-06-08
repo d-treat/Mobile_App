@@ -55,7 +55,8 @@ export default function SignupPage({navigation}: any){
         navigation.navigate('login'); 
       };
     return(
-        <ScrollView style={styles.container}>
+        <ScrollView>
+        <View style={styles.container}>
             <Logo></Logo>
             <StatusBar style="auto" />
             <View style={styles.main}>
@@ -124,6 +125,7 @@ export default function SignupPage({navigation}: any){
                 </Text>
                 </View>
             </View>
+        </View>
         </ScrollView>
     )
 }

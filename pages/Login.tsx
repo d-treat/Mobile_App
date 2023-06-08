@@ -37,7 +37,8 @@ export default function LoginPage({navigation}:any){
     navigation.navigate('request');
   }
     return(
-        <ScrollView style={styles.container}>
+      <ScrollView>
+        <View style={styles.container}>
             <Logo></Logo>
             <StatusBar style="auto" />
             <View style={styles.main}>
@@ -80,6 +81,7 @@ export default function LoginPage({navigation}:any){
                 </Text> 
                 </View>
             </View>
+        </View>
         </ScrollView>
     )
 }
